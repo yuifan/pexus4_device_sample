@@ -14,24 +14,12 @@
 # limitations under the License.
 #
 
-ifneq ($(TARGET_BUILD_JAVA_SUPPORT_LEVEL),)
+# This is an example of how to set an overlay that configures the
+# default backup transport. In this example, the configuration points
+# to the Google implementation, to show the exact syntax in a real-world
+# example.
 
-LOCAL_PATH:= $(call my-dir)
-include $(CLEAR_VARS)
+PRODUCT_PACKAGE_OVERLAYS := device/sample/overlays/location
 
-LOCAL_MODULE_TAGS := optional
-
-# This is the target being built.
-LOCAL_PACKAGE_NAME := UpgradeExample
-
-# Only compile source java files in this apk.
-LOCAL_SRC_FILES := $(call all-java-files-under, src)
-
-# Link against the current Android SDK.
-LOCAL_SDK_VERSION := current
-
-LOCAL_PROGUARD_ENABLED := disabled
-
-include $(BUILD_PACKAGE)
-
-endif # JAVA_SUPPORT
+# Uncomment this line to include the Google network and fused location providers
+#PRODUCT_PACKAGES := NetworkLocation

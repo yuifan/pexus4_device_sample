@@ -31,7 +31,6 @@ LOCAL_SRC_FILES:= \
 
 # All of the shared libraries we link against.
 LOCAL_SHARED_LIBRARIES := \
-	libandroid_runtime \
 	libnativehelper \
 	libcutils \
 	libutils
@@ -45,9 +44,5 @@ LOCAL_C_INCLUDES += \
 
 # No specia compiler flags.
 LOCAL_CFLAGS +=
-
-# Don't prelink this library.  For more efficient code, you may want
-# to add this library to the prelink map and set this to true.
-LOCAL_PRELINK_MODULE := false
 
 include $(BUILD_SHARED_LIBRARY)

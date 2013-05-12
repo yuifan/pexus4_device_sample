@@ -27,11 +27,14 @@ PRODUCT_SDK_ADDON_COPY_FILES := \
 PRODUCT_SDK_ADDON_COPY_MODULES := \
     com.example.android.platform_library:libs/platform_library.jar
 
+# Rules for public APIs
+PRODUCT_SDK_ADDON_STUB_DEFS := $(LOCAL_PATH)/addon_stub_defs
+
 # Name of the doc to generate and put in the add-on. This must match the name defined
 # in the optional library with the tag
 #    LOCAL_MODULE:= platform_library
 # in the documentation section.
-PRODUCT_SDK_ADDON_DOC_MODULE := platform_library
+PRODUCT_SDK_ADDON_DOC_MODULES := platform_library
 
 # This add-on extends the default sdk product.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/sdk.mk)
